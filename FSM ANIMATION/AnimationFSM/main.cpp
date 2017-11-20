@@ -9,9 +9,7 @@ using namespace std;
 
 int main()
 {
-	// bool to allow the change of states in input
-	bool changeState = true;
-	bool mainfinished = false;
+
 
 	sf::Text m_helpText[2];
 	sf::Font m_font;
@@ -110,11 +108,9 @@ int main()
 		}
 
 		// Handle input to Player
-		if (animated_sprite.getFinished() == true)
-		{
-			player.handleInput(input);
-			changeState = false;
-		}
+		player.handleInput(input);
+		
+		
 
 		// Update the Player
 		player.update(input);
@@ -135,11 +131,7 @@ int main()
 		
 
 
-		if (animated_sprite.getFinished() == true)
-		{
-			changeState = true;
-			animated_sprite.setFinished(false);
-		}
+
 		
 	
 		
